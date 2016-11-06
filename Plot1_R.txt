@@ -1,4 +1,6 @@
-## read in the data set file from directory ìHousehold_Power_Consumptionî  
+## Plot 1
+
+## read in the data set file from directory ‚ÄúHousehold_Power_Consumption‚Äù  
 ## histogram generated with a title "Global Active Power", with red columns, and an x-axis label of "Global Active Power (kilowatts)" 
 ## File is saved as "plot1.png" with a width of 480 pixels and height of 480 pixels  
 ## dev is closed
