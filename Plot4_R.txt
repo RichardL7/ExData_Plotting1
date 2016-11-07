@@ -1,0 +1,35 @@
+## Plot 4
+
+## read in the data set file from directory “Household_Power_Consumption”  
+## the Sub_metering,Voltage, Global_active_power, and Global_reactive_power cols are reformatted as numeric vectors 
+## Plot Layout is changed from (1,1) to (2,2) using the par command.  
+## Each plot is generated
+## file is saved as "plot2.png" with a width of 480 pixels and height of 480 pixels  
+## dev is closed  
+
+dataFile <- (".//household_power_consumption.txt") 
+readData <- read.table(dataFile, header=TRUE, sep=";", stringsAsFactors=FALSE, dec=".") 
+subSetData <- readData[readData$Date %in% c("1/2/2007","2/2/2007") ,] 
+ 
+dateTime <- strptime(paste(subSetData$Date, subSetData$Time, sep=" "), "%d/%m/%Y %H:%M:%S")  
+GlobalActivePower <- as.numeric(subSetData$Global_active_power) 
+GlobalReactivePower <- as.numeric(subSetData$Global_reactive_power) 
+voltage <- as.numeric(subSetData$Voltage) 
+subMetering1 <- as.numeric(subSetData$Sub_metering_1) 
+subMetering2 <- as.numeric(subSetData$Sub_metering_2) 
+subMetering3 <- as.numeric(subSetData$Sub_metering_3) 
+ 
+png("plot4.png", width=480, height=480) 
+par(mfrow = c(2, 2))  
+ 
+plot(dateTime, GlobalActivePower, type="l", xlab="", ylab="Global Active Power", cex=0.2) 
+ 
+plot(dateTime, voltage, type="l", xlab="datetime", ylab="Voltage") 
+
+plot(dateTime, subMetering1, type="l", ylab="Energy Submetering", xlab="") 
+lines(dateTime, subMetering2, type="l", col="red") 
+lines(dateTime, subMetering3, type="l", col="blue") 
+legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=, lwd=2.5, col=c("black", "red", "blue"), bty="o") 
+
+plot(dateTime, GlobalReactivePower, type="l", xlab="datetime", ylab="Global_reactive_power") 
+dev.off() 

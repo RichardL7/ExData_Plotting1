@@ -1,0 +1,17 @@
+## Plot 2
+
+## read in the data set file from directory “Household_Power_Consumption”  
+## plot generated with day usage label on x-axis and global active power (kilowatts) label on y-axis.  
+## file is saved as "plot2.png" with a width of 480 pixels and height of 480 pixels  
+## dev is closed  
+
+dataFile <- (".//household_power_consumption.txt") 
+readData <- read.table(dataFile, header=TRUE, sep=";", stringsAsFactors=FALSE, dec=".") 
+subSetData <- readData[readData$Date %in% c("1/2/2007","2/2/2007") ,] 
+ 
+#str(subSetData) 
+dateTime <- strptime(paste(subSetData$Date, subSetData$Time, sep=" "), "%d/%m/%Y %H:%M:%S")  
+GlobalActivePower <- as.numeric(subSetData$Global_active_power) 
+png("plot2.png", width=480, height=480) 
+plot(dateTime, GlobalActivePower, type="l", xlab="", ylab="Global Active Power (kilowatts)") 
+dev.off()
