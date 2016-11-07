@@ -1,11 +1,11 @@
 ## Plot 4
 
-## read in the data set file from directory ìHousehold_Power_Consumptionî  
-## the Sub_metering,Voltage, Global_active_power, and Global_reactive_power cols are reformatted as numeric vectors 
-## Plot Layout is changed from (1,1) to (2,2) using the par command.  
-## Each plot is generated
-## file is saved as "plot2.png" with a width of 480 pixels and height of 480 pixels  
-## dev is closed  
+## read in the data set file from directory ‚ÄúHousehold_Power_Consumption‚Äù  
+## the Global_active_power, Global_reactive_power, Voltage, and Sub_metering are reformatted as numeric vectors 
+## plot Layout is changed from (1,1) to (2,2) using the par command 
+## each plot generated
+## file saved as "plot2.png" with a width of 480 pixels and height of 480 pixels  
+## dev closed  
 
 dataFile <- (".//household_power_consumption.txt") 
 readData <- read.table(dataFile, header=TRUE, sep=";", stringsAsFactors=FALSE, dec=".") 
