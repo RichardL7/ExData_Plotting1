@@ -1,9 +1,9 @@
 ## Plot 3
 
-## read in the data set file from directory ìHousehold_Power_Consumptionî  
+## read in the data set file from directory ‚ÄúHousehold_Power_Consumption‚Äù  
 ## plot generated with day usage label on x-axis and sub metering levels on y-axis. Y-axis label is Energy Submetering. Legend is added with to the top right with line colors and variable names.  
-## file is saved as "plot2.png" with a width of 480 pixels and height of 480 pixels  
-## dev is closed  
+## file saved as "plot2.png" with a width of 480 pixels and height of 480 pixels  
+## dev closed  
 
 
 dataFile <- (".//household_power_consumption.txt") 
