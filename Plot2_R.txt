@@ -1,9 +1,9 @@
 ## Plot 2
 
-## read in the data set file from directory ìHousehold_Power_Consumptionî  
-## plot generated with day usage label on x-axis and global active power (kilowatts) label on y-axis.  
-## file is saved as "plot2.png" with a width of 480 pixels and height of 480 pixels  
-## dev is closed  
+## read in the data set file from directory ‚ÄúHousehold_Power_Consumption‚Äù  
+## plot generated with day usage label on x-axis and global active power (kilowatts) label on y-axis 
+## file saved as "plot2.png" with a width of 480 pixels and height of 480 pixels  
+## dev closed  
 
 dataFile <- (".//household_power_consumption.txt") 
 readData <- read.table(dataFile, header=TRUE, sep=";", stringsAsFactors=FALSE, dec=".") 
